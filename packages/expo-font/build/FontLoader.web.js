@@ -53,6 +53,10 @@ export function loadSingleFontAsync(name, input) {
     if (typeof input !== 'object' || typeof input.uri !== 'string' || input.downloadAsync) {
         throwInvalidSourceError(input);
     }
+    // On the server, scope-misuse throws must propagate; a silent missing font is worse.
+    if (typeof window === 'undefined') {
+        return ExpoFontLoader.loadAsync(name, input);
+    }
     try {
         return ExpoFontLoader.loadAsync(name, input);
     }

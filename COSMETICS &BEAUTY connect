@@ -1,0 +1,118 @@
+Publish
+Field	Value
+EAS Project ID	772a17bf-6bb3-407d-9d90-64b81e5d3960
+Android Package	com.cbconnect.app
+iOS Bundle ID	com.cbconnect.app
+Version	1.0.0
+OTA Updates URL	https://u.expo.dev/772a17bf-...
+Scheme	cbconnect://
+Target SDK	35 (Android 15)
+Min SDK	24 (Android 7.0)
+Splash BG	#1a0008
+📄 eas.json — 3 Build Profiles Ready
+Profile	Type	Use
+development	APK internal	Testing locally
+preview	APK internal	Sharing with testers
+production	AAB app-bundle	Google Play submission
+All 3 profiles include your live website URL as environment variables.
+
+📄 eas-setup.sh — One Script, All Secrets
+🚀 Run These Commands in Order
+After you Export → Unzip your code:
+
+code
+
+
+# 1. Install EAS CLI
+npm install -g eas-cli
+
+# 2. Login to your Expo account
+eas login
+
+# 3. Go into the mobile folder
+cd apps/mobile
+
+# 4. Open eas-setup.sh, fill in your real values, then run it
+nano eas-setup.sh        # edit the values at the top
+bash eas-setup.sh        # push all secrets to EAS
+
+# 5. Build the production .aab for Google Play
+eas build --platform android --profile production
+
+# 6. (Optional) Submit directly to Play Store
+eas submit --platform android --profile production
+🔑 Secrets You Need to Fill In
+Open the eas-setup.sh file and replace these with your real values:
+
+Secret	Where to get it
+DATABASE_URL	Your Neon dashboard
+BETTER_AUTH_SECRET	Any random 32-char string
+BETTER_AUTH_URL	https://09c57b66-fb94-44a4-bfb1-566b15b9773c.created.app
+PAYONEER_CLIENT_ID	Payoneer developer portal
+PAYONEER_CLIENT_SECRET	Payoneer developer portal
+PAYONEER_PROGRAM_ID	Payoneer merchant account
+📦 What Gets Built
+When eas build --platform android --profile production finishes, EAS gives you a .aab download link. That's the file you upload to Google Play Console in Step 12 of the publishing guide.
+
+Everything is ready. Want me to do anything else before you export?
+
+
+
+
+
+
+Jun 11, 7:13 AM
+
+3K credits remaining
+
+
+Add credits
+
+
+
+
+
+
+P
+
+See steps
+Here are all the key codes and identifiers for C&B Connect:
+
+📱 App Identity Codes
+Field	Code
+Package Name (Android)	com.cbconnect.app
+Bundle Identifier (iOS)	com.cbconnect.app
+App Slug	cb-connect
+App Name	C&B Connect
+Version Name	1.0.0
+Version Code	1
+🌐 Website & URL Codes
+Field	Code
+Website URL	https://09c57b66-fb94-44a4-bfb1-566b15b9773c.created.app
+Privacy Policy URL	https://09c57b66-fb94-44a4-bfb1-566b15b9773c.created.app/privacy
+Play Store Kit URL	https://09c57b66-fb94-44a4-bfb1-566b15b9773c.created.app/play-store
+Deep Link Scheme	cbconnect://
+⚙️ Technical Codes (Play Console)
+Field	Code
+Min Android SDK	24 (Android 7.0)
+Target Android SDK	35 (Android 15)
+Build Type	.aab (Android App Bundle)
+Architecture	arm64-v8a, x86_64
+Category	Shopping
+Content Rating	Everyone (E)
+🔑 Environment Variable Keys
+These are the variable names you need to add to EAS secrets:
+
+code
+
+
+BETTER_AUTH_SECRET
+BETTER_AUTH_URL
+PAYONEER_CLIENT_ID
+PAYONEER_CLIENT_SECRET
+PAYONEER_PROGRAM_ID
+NEXT_PUBLIC_CREATE_APP_URL
+📧 Support & Contact
+Field	Value
+Support Email	support@cbconnect.app
+Developer Name	COSMETICS & BEAUTY connect

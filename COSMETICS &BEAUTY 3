@@ -1,0 +1,41 @@
+npm install -g eas-cli
+eas login{
+  "expo": {
+    "name": "C&B Connect",
+    "slug": "cb-connect",
+    "version": "1.0.0",
+    "owner": "create-inc",
+    "runtimeVersion": { "policy": "appVersion" },
+    "updates": {
+      "url": "https://u.expo.dev/772a17bf-6bb3-407d-9d90-64b81e5d3960"
+    },
+    "extra": {
+      "router": { "origin": false },
+      "eas": {
+        "projectId": "772a17bf-6bb3-407d-9d90-64b81e5d3960"
+      }
+    }
+  }
+}eas secret:create --scope project --name DATABASE_URL --value "YOUR_NEON_DB_URL"
+
+eas secret:create --scope project --name BETTER_AUTH_SECRET --value "YOUR_32_CHAR_SECRET"
+
+eas secret:create --scope project --name BETTER_AUTH_URL --value "https://09c57b66-fb94-44a4-bfb1-566b15b9773c.created.app"
+
+eas secret:create --scope project --name NEXT_PUBLIC_CREATE_APP_URL --value "https://09c57b66-fb94-44a4-bfb1-566b15b9773c.created.app"
+
+eas secret:create --scope project --name PAYONEER_CLIENT_ID --value "YOUR_PAYONEER_CLIENT_ID"
+
+eas secret:create --scope project --name PAYONEER_CLIENT_SECRET --value "YOUR_PAYONEER_SECRET"
+
+eas secret:create --scope project --name PAYONEER_PROGRAM_ID --value "YOUR_PAYONEER_PROGRAM_ID"# Go into mobile folder
+cd apps/mobile
+
+# Option A: Test build (APK, quick)
+eas build --profile preview --platform android
+
+# Option B: Production build (AAB for Play Store)
+eas build --profile production --platform android
+
+# Option C: Submit directly to Play Store (needs google-service-account.json)
+eas submit --platform android --profile productionnpx expo start
